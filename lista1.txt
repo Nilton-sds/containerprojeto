@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sua Página</title>
+
+  <link href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">
+
+</head>
+<body>
+  
+  <table id="minhaTabela">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NOME</th>
+       
+     
+    </thead>
+    </tbody>
+    </table>
+
+
+  <?php
+
+
+include_once "conexao.php";
+
+
+
+
+$query_usuarios = $connx->query("SELECT Id, nome  FROM cadastro1");
+
+
+
+$result = $query_usuarios->fetch_all(MYSQLI_ASSOC);
+foreach ($result as $r) {
+ echo $r['nome'];
+}
+
+
+
+
+?>
+
+
+
+
+
+
+
+</body>
+</html>
